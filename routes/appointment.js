@@ -12,11 +12,7 @@ router.get(
   roleCheck(['doctor', 'admin']),
   appointmentController.getPending
 );
-router.get(
-  '/:id',
-  roleCheck(['doctor', 'admin']),
-  appointmentController.getOne
-);
+router.get('/:id', isAuthenticated, appointmentController.getOne);
 
 router.get(
   '/:id/approve',

@@ -1,0 +1,4 @@
+MONGODB_URI = "mongodb://0.0.0.0:27017/subhashree"
+JWT_SECRET = "some_secret"
+TWILIO_ACCOUNT_SID= "ACb196731db**********************"
+TWILIO_PHONE_NUMBER="+1507******"
