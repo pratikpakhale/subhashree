@@ -29,6 +29,7 @@ const doctorSchema = new Schema({
       validator: emailValidator,
       message: props => `${props.value} is not a valid email address`,
     },
+    unique: true,
     required: [true, 'Email is required'],
   },
   password: {

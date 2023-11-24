@@ -110,9 +110,16 @@ exports.update = async (req, res, next) => {
       type === 'doctor' &&
       (req.payload.id == req.params.id || req.payload.type === 'admin')
     ) {
-      const doctor = await Doctor.findByIdAndUpdate(req.params.id, req.body, {
-        new: true,
-      });
+      const doctor = await Doctor.findByIdAndUpdate(
+        req.params.id,
+        {
+          ...req.body,
+          image: req.file ? req.file.path : null,
+        },
+        {
+          new: true,
+        }
+      );
       return res.status(200).json(doctor);
     }
 

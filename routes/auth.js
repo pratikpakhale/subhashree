@@ -16,6 +16,11 @@ router.post(
   authController.doctorSignup
 );
 router.post('/signup/admin', roleCheck('admin'), authController.adminSignup);
-router.put('/update/:id', isAuthenticated, authController.update);
+router.put(
+  '/update/:id',
+  upload.image(),
+  isAuthenticated,
+  authController.update
+);
 
 module.exports = router;
